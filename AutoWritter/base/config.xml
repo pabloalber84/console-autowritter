@@ -1,0 +1,16 @@
+<configs>
+	<!-- Velocities -->
+	<config name="velocity_perline" value="2"></config>
+	<config name="velocity_perletter" value="0.05"></config>
+	<!--  Colors: -->
+	<!--
+		blue
+		green
+		red
+		yellow
+		white
+		black
+	-->
+	<config name="text_color" value="white"></config>
+	<config name="background_color" value="black"></config>
+</configs>
