@@ -52,4 +52,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="BeforeCompile" BeforeTargets="BuildCompile" Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Message Text="Adding 'config.xml' and 'data.txt' before RELEASE"/>
+    <Copy SourceFiles="$(SolutionDir)AutoWritter\base\config.xml"
+      DestinationFolder="$(ProjectDir)bin\Release" />
+    <Copy SourceFiles="$(SolutionDir)AutoWritter\base\data.txt"
+      DestinationFolder="$(ProjectDir)bin\Release" />
+  </Target>
+  <Target Name="BeforeBuild" BeforeTargets="PrepareForBuild" Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Message Text="Adding 'config.xml' and 'data.txt' before DEBUG"/>
+    <Copy SourceFiles="$(SolutionDir)AutoWritter\base\config.xml"
+      DestinationFolder="$(ProjectDir)bin\Debug" />
+    <Copy SourceFiles="$(SolutionDir)AutoWritter\base\data.txt"
+      DestinationFolder="$(ProjectDir)bin\Debug" />
+  </Target>
 </Project>
